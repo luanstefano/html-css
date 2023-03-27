@@ -11,6 +11,20 @@ Grandes: acima de 1200px
 
 @media print {
 
+    main {
+        border: 2px solid black;
+    }
+
+    main::after {
+        content: 'Esta impressão foi feita pelo site www.xxx.com.br';
+        text-decoration: overline;
+    }
+
+    main, h1 {
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        text-shadow: none;
+    }
 }
 
 /* Tablet: entre 768 e 992px */
