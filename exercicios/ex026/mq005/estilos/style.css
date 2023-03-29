@@ -44,22 +44,25 @@ nav {
     display: none;
 }
 
-nav > li {
-    background-color: gray;
+nav > li {    
     list-style-type: none;
     border-top: 2px solid darkgray;
    
 }
 
-nav > li:hover {
-    background-color: darkgray;
-}
 
 nav > li > a {
+    background-color: gray;
     color: white;
     display: block;
     padding: 10px;
 }
+
+nav > li > a:hover {
+    background-color: white;
+    color: black;
+}
+
 
 main {
     width: 95vw;
