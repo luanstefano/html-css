@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid na prática</title>
+
+    <style>
+
+        
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: .5rem;
+            height: 98vh;
+            margin: 0 auto;
+            max-width: 1200px;
+
+            grid-template-areas: 
+            "header"
+            "main"
+            "aside"
+            "sidebar"
+            "asidedois"
+            "footer";
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(6, 1fr);
+                grid-auto-rows: .5fr 2fr .5fr .5fr;
+                grid-template-areas: 
+                "header header header header header header"
+                ".      main   main   main   sidebar    ."
+                ".      aside  aside  asidedois asidedois ."
+                "footer footer footer footer footer footer";
+            }
+        }
+
+        .header, .footer {background-color: skyblue;}
+        .header {grid-area: header;}
+        .main {background-color: coral; grid-area: main;}
+        .sidebar {background-color: royalblue; grid-area: sidebar;}
+        .aside, .asidedois {background-color: blueviolet;}
+        .aside {grid-area: aside;}
+        .asidedois {grid-area: asidedois;}
+        .footer {grid-area: footer;}
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header class="header">Header</header>
+        <main class="main">Main</main>
+        <aside class="sidebar">Sidebar</aside>
+        <aside class="aside">Aside</aside>
+        <aside class="asidedois">Aside</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+    
+
+</body>
+</html>
