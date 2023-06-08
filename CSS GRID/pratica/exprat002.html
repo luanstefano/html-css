@@ -1,12 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grid na prática</title>
+
+    <style>
+
+        @media (min-width: 768px) {
+            .wrapper {
+                display: grid;
+                gap: .5rem;
+                grid-template-columns: [site-start] 1fr [content-start] repeat(6, 1fr) [content-end] 1fr [site-end];
+                grid-auto-rows: 1fr;
+                height: 98vh;
+                
+                
+            }
+        }    
+
+        .wrapper > * {
+            padding: 1rem;
+            margin:  .5rem;
+        }
+
+        @media (min-width: 768px) {
+            .wrapper > * {
+                grid-column: content;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .header {
+            background-color: skyblue;
+            margin-top: 0;
+        }
+
+        .hero {
+            background-color: mediumseagreen;
+            height: 200px;        
+        }
+
+        .subcont {
+            display: grid;
+            gap: .5rem;
+        }
+
+        @media (min-width: 768px) {
+            .subcont {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-auto-rows: 150px;
+            }
+        }
+
+        .sub {
+            background-color: salmon;
+            min-height: 100px;
+        }
+
+        .main {
+            background-color: royalblue;
+            
+        }
+
+        .aside {
+            background-color: goldenrod;
+            
+        }
+
+        .footer {
+            background-color: skyblue;
+            margin-bottom: 0;
+        }
+
+        .gridfull {
+            grid-column: site;
+        }
+
+        .leftexpand {
+            grid-column: site-start / content;
+        }
+
+    </style>
+
 </head>
 <body>
     
+    <div class="wrapper">
+
+        <header class="header gridfull"></header>
+        <div class="hero"></div>
+        <section class="subcont">
+            <article class="sub"></article>
+            <article class="sub"></article>
+            <article class="sub"></article>
+            <article class="sub"></article>
+            <article class="sub"></article>
+            <article class="sub"></article>
+        </section>
+        <main class="main"></main>
+        <aside class="aside leftexpand"></aside>
+        <footer class="footer gridfull"></footer>
+
+    </div>
+
 </body>
 </html>
