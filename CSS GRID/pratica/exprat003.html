@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício prático CSS Grid</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+            
+           
+        }
+
+        .wrapper {
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+            position: relative;
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: 1fr;
+            gap: .5rem;
+            height: 98vh;
+            margin: auto;
+            max-width: 1024px;
+            
+
+            grid-template-areas: 
+            "title"
+            "meta"
+            "copy1"
+            "copy2"
+            "media"
+            "aside";
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(4, 1fr);
+                height: 98vh;
+                
+
+                grid-template-areas:
+                "meta title title title"
+                "copy1 copy1 copy1 copy1"
+                "copy2 copy2 copy2 copy2"
+                "media media media aside";
+                
+            }
+
+            @media (min-width: 960px) {
+                grid-template-columns: repeat(6, 1fr);
+                height: 98hv;
+                
+                grid-template-areas:
+                "meta title title title copy2 copy2"
+                "copy1 copy1 copy1 copy1 copy2 copy2"
+                "media media media media media media"
+                "aside aside . . . . ";
+
+            }
+
+        }
+
+        .title {
+            background-color: aqua;
+            grid-area: title;
+        }
+
+        .meta {
+            background-color: darkgrey;
+            grid-area: meta;
+        }
+
+        .copy1 {
+            background-color: royalblue;
+            grid-area: copy1;
+        }
+
+        .copy2 {
+            background-color: thistle;
+            grid-area: copy2;
+        }
+
+        .media {
+            background-color: khaki;
+            grid-area: media;
+        }
+
+        .aside {
+            background-color: salmon;
+            grid-area: aside;
+        }
+
+       
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <header class="title">Title</header>
+
+        <aside class="meta">Meta</aside>
+
+        <section class="copy1">Copy 1</section>
+
+        <section class="copy2">Copy 2</section>
+
+        <main class="media">Media</main>
+
+        <aside class="aside">Aside</aside>
+
+    </div>
+
+</body>
+</html>
