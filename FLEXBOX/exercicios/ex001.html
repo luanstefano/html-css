@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Container</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column-reverse;
+
+                      
+        }
+
+        @media screen and (min-width:768px) {
+            .container {
+                flex-direction: row;
+
+            }
+
+            .container > * {
+                width: min(200px);
+            }
+        }
+
+        .container > * {
+            background-color: tomato;
+            border: solid black 1px;
+            height: min(200px);
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+
+</body>
+</html>
