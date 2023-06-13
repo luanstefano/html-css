@@ -9,18 +9,20 @@
         .container {
             display: flex;
             flex-direction: column-reverse;
-
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
                       
         }
 
         @media screen and (min-width:768px) {
             .container {
                 flex-direction: row;
-
+                justify-items: fl;
             }
 
             .container > * {
-                width: min(200px);
+                flex: 0 1 200px;
             }
         }
 
@@ -30,6 +32,11 @@
             height: min(200px);
             margin: 10px;
         }
+
+        .container div:nth-child(3) {
+            order: -1;
+        }
+
     </style>
 
 </head>
