@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Santo Graal</title>
+
+    <style>
+
+        html {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        * {
+            border: rgba(255, 255, 255, 0.527) solid 2px;
+            padding: 5px;
+            margin: 3px;
+
+        }
+
+        body.container {
+            background-color: steelblue;
+            display: flex;
+            flex-direction: column;
+            height: 98vh;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            order: -1;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .sidebar, .ads {
+            flex-basis: 100px;
+        }
+
+        @media (min-width: 720px) {
+            .content {
+                flex-direction: row;
+            }            
+        }
+
+    </style>
+
+</head>
+<body class="container">
+    
+    <div class="header">Header</div>
+
+    <div class="content">
+        <main class="main">Main</main>
+        <aside class="sidebar">Sidebar</aside>
+        <aside class="ads">Ads</aside>
+    </div>
+
+    <footer>Footer</footer>
+
+</body>
+</html>
